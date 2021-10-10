@@ -370,6 +370,8 @@ end
 for i=1:size(Mobj.read_obc_nodes,2)
     nodeList = double(cell2mat(Mobj.read_obc_nodes(i)));
     Mobj = add_obc_nodes_list(Mobj,nodeList,inputConf.boundaryNames{i},1,1);
+    % find inside open bounday
+    [~,~,temp_list] = fix_inside_boundary(Mobj.x, Mobj.y, Mobj.read_obc_nodes{i}); 
     if inputConf.spongeRadius < 0    % if we want a variable sponge radius
         if i==1
             % Create an array to store the radii
@@ -389,6 +391,14 @@ for i=1:size(Mobj.read_obc_nodes,2)
     clear nodeList spongeRadius
 end
 clear i
+save('varb/temp_list.mat','temp_list','-v7.3','-nocompression');
+% plot points inside open boundary
+%{
+clear i
+x = Mobj.x;
+y = Mobj.y;
+plot(x(temp_list), y(temp_list), 'go');
+%}
 
 % Model time is decided depend on the datetype.
 if strcmpi(inputConf.verticalCoordType,'sigma')
@@ -1266,7 +1276,7 @@ if strcmpi(inputConf.riverForcing, 'FLUX')
          inputConf.river.infos,...
          Mobj.river.timeMJD,...
          Mobj.river.flux,...
-         Mobj.river.temp -3.0,...
+         Mobj.river.temp + 2.0,...
          Mobj.river.salt,...
         'Tokyo Bay rivers',...
         'Model river boundary input');
