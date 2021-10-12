@@ -1,0 +1,9 @@
+<OGRVRTDataSource>
+    <OGRVRTLayer name="present_cud_m07_20">
+        <SrcLayer>present_cud_m07_20</SrcLayer>
+        <LayerSRS>EPSG:4326</LayerSRS>
+        <SrcDataSource>CSV:present_cud_m07_20.csv</SrcDataSource>
+        <GeometryType>wkbPoint</GeometryType>
+        <GeometryField encoding="PointFromColumns" x="field_1" y="field_2" z="field_3"/>
+    </OGRVRTLayer>
+</OGRVRTDataSource>

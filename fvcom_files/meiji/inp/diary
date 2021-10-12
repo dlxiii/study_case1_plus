@@ -1981,3 +1981,1552 @@ age: 670 of time 745
 age: 671 of time 745
 age: 672 of time 745
 age: 673 of time 745
+age: 674 of time 745
+age: 675 of time 745
+age: 676 of time 745
+age: 677 of time 745
+age: 678 of time 745
+age: 679 of time 745
+age: 680 of time 745
+age: 681 of time 745
+age: 682 of time 745
+age: 683 of time 745
+age: 684 of time 745
+age: 685 of time 745
+age: 686 of time 745
+age: 687 of time 745
+age: 688 of time 745
+age: 689 of time 745
+age: 690 of time 745
+age: 691 of time 745
+age: 692 of time 745
+age: 693 of time 745
+age: 694 of time 745
+age: 695 of time 745
+age: 696 of time 745
+age: 697 of time 745
+age: 698 of time 745
+age: 699 of time 745
+age: 700 of time 745
+age: 701 of time 745
+age: 702 of time 745
+age: 703 of time 745
+age: 704 of time 745
+age: 705 of time 745
+age: 706 of time 745
+age: 707 of time 745
+age: 708 of time 745
+age: 709 of time 745
+age: 710 of time 745
+age: 711 of time 745
+age: 712 of time 745
+age: 713 of time 745
+age: 714 of time 745
+age: 715 of time 745
+age: 716 of time 745
+age: 717 of time 745
+age: 718 of time 745
+age: 719 of time 745
+age: 720 of time 745
+age: 721 of time 745
+age: 722 of time 745
+age: 723 of time 745
+age: 724 of time 745
+age: 725 of time 745
+age: 726 of time 745
+age: 727 of time 745
+age: 728 of time 745
+age: 729 of time 745
+age: 730 of time 745
+age: 731 of time 745
+age: 732 of time 745
+age: 733 of time 745
+age: 734 of time 745
+age: 735 of time 745
+age: 736 of time 745
+age: 737 of time 745
+age: 738 of time 745
+age: 739 of time 745
+age: 740 of time 745
+age: 741 of time 745
+age: 742 of time 745
+age: 743 of time 745
+age: 744 of time 745
+age: 745 of time 745
+<a href="matlab: opentoline('/Applications/MATLAB_R2019a.app/toolbox/matlab/specgraph/dither.m',53,1)">53  </a>end
+if system_dependent('IsDebugMode')==1, dbquit; end
+load('ncfile_TD.mat')
+surf(TD.age14_09)
+imagesc(TD.age14_09)
+image(TD.age14_09)
+contourf(TD.age14_09)
+load('d_ncfile_TD.mat')
+load('d_ncfile_TD.mat')
+plot(TD.age14_10(:,1))
+wa = [];
+f = 1
+
+f =
+
+     1
+
+load(fullfile(['/Users/yulong/GitHub/study_case1_plus/fvcom_files/',...
+        folderpath{f},'/pst/u_ncfile_TD.mat']));
+wa.lon = TD.lon;
+        wa.lat = TD.lat;
+        wa.nv = TD.nv;
+        wa.siglay = TD.siglay;
+for m = 1:length(mcode)
+            wa.c0001.(mcode{m}) = TD.(month{m});
+        end
+wa = [];
+for f = 1:length(folderpath)
+    load(fullfile(['/Users/yulong/GitHub/study_case1_plus/fvcom_files/',...
+        folderpath{f},'/pst/u_ncfile_TD.mat']));
+    if f == 1
+        wa.lon = TD.lon;
+        wa.lat = TD.lat;
+        wa.nv = TD.nv;
+        wa.siglay = TD.siglay;
+        for m = 1:length(mcode)
+            wa.c0001.(mcode{m}) = TD.(month{m});
+        end
+    else
+        for m = 1:length(mcode)
+            wa.(['c',folderpath{f}]).(mcode{m}) = TD.(month{m});
+        end
+    end
+    clear TD;
+end
+length(folderpath)
+
+ans =
+
+     2
+
+wa = [];
+for f = 1:length(folderpath)
+    load(fullfile(['/Users/yulong/GitHub/study_case1_plus/fvcom_files/',...
+        folderpath{f},'/pst/u_ncfile_TD.mat']));
+    if f == 1
+        wa.lon = TD.lon;
+        wa.lat = TD.lat;
+        wa.nv = TD.nv;
+        wa.siglay = TD.siglay;
+        for m = 1:length(mcode)
+            wa.cmeiji.(mcode{m}) = TD.(month{m});
+        end
+    else
+        for m = 1:length(mcode)
+            wa.(['c',folderpath{f}]).(mcode{m}) = TD.(month{m});
+        end
+    end
+    clear TD;
+end
+typepath = {...
+    'u','d',...
+    };
+f=1
+
+f =
+
+     1
+
+wa = [];
+for t = 1:length(folderpath)
+    load(fullfile(['/Users/yulong/GitHub/study_case1_plus/fvcom_files/',...
+        folderpath{f},'/pst/',typepath{t},'_ncfile_TD.mat']));
+    if t == 1
+        wa.lon = TD.lon;
+        wa.lat = TD.lat;
+        wa.nv = TD.nv;
+        wa.siglay = TD.siglay;
+        for m = 1:length(mcode)
+            wa.cmeiji.(mcode{m}) = TD.(month{m});
+        end
+    else
+        for m = 1:length(mcode)
+            wa.(['c',folderpath{t}]).(mcode{m}) = TD.(month{m});
+        end
+    end
+    clear TD;
+end
+wa = [];
+for t = 1:length(folderpath)
+    load(fullfile(['/Users/yulong/GitHub/study_case1_plus/fvcom_files/',...
+        folderpath{f},'/pst/',typepath{t},'_ncfile_TD.mat']));
+    if t == 1
+        wa.lon = TD.lon;
+        wa.lat = TD.lat;
+        wa.nv = TD.nv;
+        wa.siglay = TD.siglay;
+        for m = 1:length(mcode)
+            wa.cu.(mcode{m}) = TD.(month{m});
+        end
+    else
+        for m = 1:length(mcode)
+            wa.(['c',tpyepath{t}]).(mcode{m}) = TD.(month{m});
+        end
+    end
+    clear TD;
+end
+{Undefined variable "tpyepath" or class "tpyepath".
+} 
+wa = [];
+for t = 1:length(folderpath)
+    load(fullfile(['/Users/yulong/GitHub/study_case1_plus/fvcom_files/',...
+        folderpath{f},'/pst/',typepath{t},'_ncfile_TD.mat']));
+    if t == 1
+        wa.lon = TD.lon;
+        wa.lat = TD.lat;
+        wa.nv = TD.nv;
+        wa.siglay = TD.siglay;
+        for m = 1:length(mcode)
+            wa.cu.(mcode{m}) = TD.(month{m});
+        end
+    else
+        for m = 1:length(mcode)
+            wa.(['c',typepath{t}]).(mcode{m}) = TD.(month{m});
+        end
+    end
+    clear TD;
+end
+for t = 1:length(typepath)
+    load(fullfile(['/Users/yulong/GitHub/study_case1_plus/fvcom_files/',...
+        folderpath{f},'/pst/',typepath{t},'_ncfile_TD.mat']));
+    if t == 1
+        wa.(folderpath{f}).lon = TD.lon;
+        wa.(folderpath{f}).lat = TD.lat;
+        wa.(folderpath{f}).nv = TD.nv;
+        wa.(folderpath{f}).siglay = TD.siglay;
+        for m = 1:length(mcode)
+            wa.(folderpath{f}).cu.(mcode{m}) = TD.(month{m});
+        end
+    else
+        for m = 1:length(mcode)
+            wa.(folderpath{f}).(['c',typepath{t}]).(mcode{m}) = TD.(month{m});
+        end
+    end
+    clear TD;
+end
+for t = 1:length(typepath)
+    load(fullfile(['/Users/yulong/GitHub/study_case1_plus/fvcom_files/',...
+        folderpath{f},'/pst/',typepath{t},'_ncfile_TD.mat']));
+    if t == 1
+        wa.(folderpath{f}).lon = TD.lon;
+        wa.(folderpath{f}).lat = TD.lat;
+        wa.(folderpath{f}).nv = TD.nv;
+        wa.(folderpath{f}).siglay = TD.siglay;
+        for m = 1:length(mcode)
+            wa.(folderpath{f}).cu.(mcode{m}) = TD.(month{m});
+        end
+    else
+        for m = 1:length(mcode)
+            wa.(folderpath{f}).(['c',typepath{t}]).(mcode{m}) = TD.(month{m});
+        end
+    end
+    clear TD;
+end
+wa = [];
+for f = 1:length(folderpath)
+    for t = 1:length(typepath)
+        load(fullfile(['/Users/yulong/GitHub/study_case1_plus/fvcom_files/',...
+            folderpath{f},'/pst/',typepath{t},'_ncfile_TD.mat']));
+        if t == 1
+            wa.(folderpath{f}).lon = TD.lon;
+            wa.(folderpath{f}).lat = TD.lat;
+            wa.(folderpath{f}).nv = TD.nv;
+            wa.(folderpath{f}).siglay = TD.siglay;
+            for m = 1:length(mcode)
+                wa.(folderpath{f}).cu.(mcode{m}) = TD.(month{m});
+            end
+        else
+            for m = 1:length(mcode)
+                wa.(folderpath{f}).(['c',typepath{t}]).(mcode{m}) = TD.(month{m});
+            end
+        end
+        clear TD;
+    end
+end
+save('wa.mat','wa','-v7.3','-nocompression');
+wa_dif.(['c',typepath{t}]).(mcode{m}) = ...
+            wa.present.(['c',typepath{t}]).(mcode{m}) - ...
+            wa.meiji.(['c',typepath{t}]).(mcode{m});
+{Matrix dimensions must agree.
+} 
+typepath{t}
+
+ans =
+
+    'd'
+
+mcode{m}
+
+ans =
+
+    'm08'
+
+'c',typepath{t}
+
+ans =
+
+    'c'
+
+
+ans =
+
+    'd'
+
+['c',typepath{t}]
+
+ans =
+
+    'cd'
+
+csv_resol = 1000;
+layerlist = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+month = {'m09','m10','m11','m12',...
+    'm01','m02','m03','m04','m05','m06',...
+    'm07','m08'};
+typelist = {'cu','cd'};
+length(typelist)
+
+ans =
+
+     2
+
+length(layerlist)
+
+ans =
+
+    20
+
+c = 1
+
+c =
+
+     1
+
+l = 1
+
+l =
+
+     1
+
+layer = layerlist(l);
+m = 1
+
+m =
+
+     1
+
+typelist{c}
+
+ans =
+
+    'cu'
+
+f = 1
+
+f =
+
+     1
+
+folderpath{f}
+
+ans =
+
+    'meiji'
+
+typelist{c}
+
+ans =
+
+    'cu'
+
+month{m}
+
+ans =
+
+    'm09'
+
+data1 = double(wa.(folderpath{f}).(typelist{c}).(month{m})(:,layer));
+data1 = filloutliers(data1,'nearest','mean');
+folderpath{f}
+
+ans =
+
+    'meiji'
+
+data_temp.intp = scatteredInterpolant(...
+                    wa.(folderpath{f}).lon,...
+                    wa.(folderpath{f}).lat,...
+                    data1,...
+                    'natural');
+data_temp.lonint = (139.14:(csv_resol/111000):140.39)';
+                data_temp.latint = (34.85:(csv_resol/111000):35.70)';
+                data_temp.ageint = data_temp.intp({data_temp.lonint,data_temp.latint});
+data = data_temp.ageint;
+                data = filloutliers(data,'nearest','mean');
+mwa = [];
+csv_resol = 1000;
+layerlist = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+month = {'m09','m10','m11','m12',...
+    'm01','m02','m03','m04','m05','m06',...
+    'm07','m08'};
+typelist = {'cu','cd'};
+for f = 1:length(folderpath)
+    for c = 1:length(typelist)
+        for l = 1:length(layerlist)
+            layer = layerlist(l);
+            for m = 1:length(month)
+                data1 = double(wa.(folderpath{f}).(typelist{c}).(month{m})(:,layer));
+                data1 = filloutliers(data1,'nearest','mean');
+                data_temp.intp = scatteredInterpolant(...
+                    wa.(folderpath{f}).lon,...
+                    wa.(folderpath{f}).lat,...
+                    data1,...
+                    'natural');
+                data_temp.lonint = (139.14:(csv_resol/111000):140.39)';
+                data_temp.latint = (34.85:(csv_resol/111000):35.70)';
+                data_temp.ageint = data_temp.intp({data_temp.lonint,data_temp.latint});
+                data = data_temp.ageint;
+                data = filloutliers(data,'nearest','mean');
+                mwa.(folderpath{f}).(typelist{c}).(month{m})(:,layer)) = data;
+                 mwa.(folderpath{f}).(typelist{c}).(month{m})(:,layer)) = data;
+                                                                      ↑
+{Error: Invalid expression. When calling a function or indexing a variable,
+use parentheses. Otherwise, check for mismatched delimiters.
+} 
+mwa = [];
+csv_resol = 1000;
+layerlist = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+month = {'m09','m10','m11','m12',...
+    'm01','m02','m03','m04','m05','m06',...
+    'm07','m08'};
+typelist = {'cu','cd'};
+for f = 1:length(folderpath)
+    for c = 1:length(typelist)
+        for l = 1:length(layerlist)
+            layer = layerlist(l);
+            for m = 1:length(month)
+                data1 = double(wa.(folderpath{f}).(typelist{c}).(month{m})(:,layer));
+                data1 = filloutliers(data1,'nearest','mean');
+                data_temp.intp = scatteredInterpolant(...
+                    wa.(folderpath{f}).lon,...
+                    wa.(folderpath{f}).lat,...
+                    data1,...
+                    'natural');
+                data_temp.lonint = (139.14:(csv_resol/111000):140.39)';
+                data_temp.latint = (34.85:(csv_resol/111000):35.70)';
+                data_temp.ageint = data_temp.intp({data_temp.lonint,data_temp.latint});
+                data = data_temp.ageint;
+                data = filloutliers(data,'nearest','mean');
+                mwa.(folderpath{f}).(typelist{c}).(month{m})(:,layer) = data;
+            end
+        end
+    end
+end
+{Unable to perform assignment because the indices on the left side are not
+compatible with the size of the right side.
+} 
+mwa = [];
+csv_resol = 1000;
+layerlist = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+month = {'m09','m10','m11','m12',...
+    'm01','m02','m03','m04','m05','m06',...
+    'm07','m08'};
+typelist = {'cu','cd'};
+for f = 1:length(folderpath)
+    for c = 1:length(typelist)
+        for l = 1:length(layerlist)
+            layer = layerlist(l);
+            for m = 1:length(month)
+                data1 = double(wa.(folderpath{f}).(typelist{c}).(month{m})(:,layer));
+                data1 = filloutliers(data1,'nearest','mean');
+                data_temp.intp = scatteredInterpolant(...
+                    wa.(folderpath{f}).lon,...
+                    wa.(folderpath{f}).lat,...
+                    data1,...
+                    'natural');
+                data_temp.lonint = (139.14:(csv_resol/111000):140.39)';
+                data_temp.latint = (34.85:(csv_resol/111000):35.70)';
+                data_temp.ageint = data_temp.intp({data_temp.lonint,data_temp.latint});
+                data = data_temp.ageint;
+                data = filloutliers(data,'nearest','mean');
+                %mwa.(folderpath{f}).(typelist{c}).(month{m})(:,layer) = data;
+            end
+        end
+    end
+end
+<a href="matlab: opentoline('/Applications/MATLAB_R2019a.app/toolbox/matlab/datafun/filloutliers.m',117,1)">117 </a>[method, wl, dim, p, sp, vars, fill, maxoutliers, lowup] = ...
+if system_dependent('IsDebugMode')==1, dbquit; end
+data1 = double(wa.(folderpath{f}).(typelist{c}).(month{m})(:,layer));
+                data1 = filloutliers(data1,'nearest','mean');
+                data_temp.intp = scatteredInterpolant(...
+                    wa.(folderpath{f}).lon,...
+                    wa.(folderpath{f}).lat,...
+                    data1,...
+                    'natural');
+                data_temp.lonint = (139.14:(csv_resol/111000):140.39)';
+                data_temp.latint = (34.85:(csv_resol/111000):35.70)';
+                data_temp.ageint = data_temp.intp({data_temp.lonint,data_temp.latint});
+                data = data_temp.ageint;
+                data = filloutliers(data,'nearest','mean');
+contour(data)
+imagesc(data)
+mwa.(folderpath{f}).(typelist{c}).(month{m})(:,:,layer) = data;
+mwa = [];
+csv_resol = 1000;
+layerlist = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+month = {'m09','m10','m11','m12',...
+    'm01','m02','m03','m04','m05','m06',...
+    'm07','m08'};
+typelist = {'cu','cd'};
+for f = 1:length(folderpath)
+    for c = 1:length(typelist)
+        for l = 1:length(layerlist)
+            layer = layerlist(l);
+            for m = 1:length(month)
+                data1 = double(wa.(folderpath{f}).(typelist{c}).(month{m})(:,layer));
+                data1 = filloutliers(data1,'nearest','mean');
+                data_temp.intp = scatteredInterpolant(...
+                    wa.(folderpath{f}).lon,...
+                    wa.(folderpath{f}).lat,...
+                    data1,...
+                    'natural');
+                data_temp.lonint = (139.14:(csv_resol/111000):140.39)';
+                data_temp.latint = (34.85:(csv_resol/111000):35.70)';
+                data_temp.ageint = data_temp.intp({data_temp.lonint,data_temp.latint});
+                data = data_temp.ageint;
+                data = filloutliers(data,'nearest','mean');
+                mwa.(folderpath{f}).(typelist{c}).(month{m})(:,:,layer) = data;
+            end
+        end
+    end
+end
+mwa = [];
+csv_resol = 500;
+layerlist = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+month = {'m09','m10','m11','m12',...
+    'm01','m02','m03','m04','m05','m06',...
+    'm07','m08'};
+typelist = {'cu','cd'};
+for f = 1:length(folderpath)
+    for c = 1:length(typelist)
+        for l = 1:length(layerlist)
+            layer = layerlist(l);
+            for m = 1:length(month)
+                data1 = double(wa.(folderpath{f}).(typelist{c}).(month{m})(:,layer));
+                data1 = filloutliers(data1,'nearest','mean');
+                data_temp.intp = scatteredInterpolant(...
+                    wa.(folderpath{f}).lon,...
+                    wa.(folderpath{f}).lat,...
+                    data1,...
+                    'natural');
+                data_temp.lonint = (139.14:(csv_resol/111000):140.39)';
+                data_temp.latint = (34.85:(csv_resol/111000):35.70)';
+                data_temp.ageint = data_temp.intp({data_temp.lonint,data_temp.latint});
+                data = data_temp.ageint;
+                data = filloutliers(data,'nearest','mean');
+                mwa.(folderpath{f}).(typelist{c}).(month{m})(:,:,layer) = data;
+            end
+        end
+    end
+end
+save('wa_mesh.mat','mwa','-v7.3','-nocompression');
+save('wa_mesh.mat','mwa','-v7.3','-nocompression');
+mwa.(folderpath{f}).(typelist{c}).(month{m})(:,:,layer);
+mwa.(folderpath{f}).(typelist{c}).(month{m})-...
+                    mwa.(folderpath{f}).(typelist{c}).(month{m});
+mwa.(folderpath{f}).(typelist{c}).(month{m})(:,:,layer)-...
+                    mwa.(folderpath{f}).(typelist{c}).(month{m})(:,:,layer);
+mwa.present.(typelist{c}).(month{m})(:,:,layer)-...
+                    mwa.meiji.(typelist{c}).(month{m})(:,:,layer);
+imagesc(ans)
+image(ans)
+contourf(ans)
+wa_dif.(typelist{c}).(month{m})(:,:,layer) = ...
+                    mwa.present.(typelist{c}).(month{m})(:,:,layer) - ...
+                    mwa.meiji.(typelist{c}).(month{m})(:,:,layer);
+for f = 1:length(folderpath)
+    for c = 1:length(typelist)
+        for l = 1:length(layerlist)
+            layer = layerlist(l);
+            for m = 1:length(month)
+                wa_dif.(typelist{c}).(month{m})(:,:,layer) = ...
+                    mwa.present.(typelist{c}).(month{m})(:,:,layer) - ...
+                    mwa.meiji.(typelist{c}).(month{m})(:,:,layer);
+            end
+        end
+    end
+end
+save('wa_dif.mat','wa_dif','-v7.3','-nocompression');
+clear all;
+clearvars; 
+clc;
+
+delete('diary')
+[Warning: File 'diary' not found.] 
+diary on;
+% Which system am I using?
+if ismac        % On Mac
+    basedir = '/Users/yulong/GitHub/';
+    addpath([basedir,'fvcomtoolbox/custom/']);
+    addpath([basedir,'fvcomtoolbox/utilities/']);
+elseif isunix	% Unix?
+    basedir = '/home/usr0/n70110d/';
+    addpath([basedir,'github/fvcomtoolbox/custom/']);
+    addpath([basedir,'github/fvcomtoolbox/utilities/']);
+elseif ispc     % Or Windows?
+    basedir = 'C:/Users/Yulong WANG/Documents/GitHub/';      
+    addpath([basedir,'fvcom-toolbox/custom/']);
+    addpath([basedir,'fvcom-toolbox/utilities/']);
+end
+formatSpec = '%02i';
+td = load("./wa_mesh.mat");
+wa = td.mwa;
+clear td;
+if exist('../../wa_files', 'dir')~=7
+    mkdir('../../wa_files')
+end
+f = 1
+
+f =
+
+     1
+
+c = 1
+
+c =
+
+     1
+
+l = 1
+
+l =
+
+     1
+
+ayer = layerlist(l);
+{Undefined function or variable 'layerlist'.
+} 
+folderpath = {...
+    'meiji','present',...
+    };
+typepath = {...
+    'u','d',...
+    };
+layerlist = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+month = {'m09','m10','m11','m12',...
+    'm01','m02','m03','m04','m05','m06',...
+    'm07','m08'};
+layer = layerlist(l);
+m = 1
+
+m =
+
+     1
+
+data = wa.(folderpath{f}).(typelist{c}).(month{m})(:,:,layer);
+{Undefined variable "typelist" or class "typelist".
+} 
+typelist = {'cu','cd'};
+clear all;
+clearvars; 
+clc;
+
+delete('diary')
+[Warning: File 'diary' not found.] 
+diary on;
+% Which system am I using?
+if ismac        % On Mac
+    basedir = '/Users/yulong/GitHub/';
+    addpath([basedir,'fvcomtoolbox/custom/']);
+    addpath([basedir,'fvcomtoolbox/utilities/']);
+elseif isunix	% Unix?
+    basedir = '/home/usr0/n70110d/';
+    addpath([basedir,'github/fvcomtoolbox/custom/']);
+    addpath([basedir,'github/fvcomtoolbox/utilities/']);
+elseif ispc     % Or Windows?
+    basedir = 'C:/Users/Yulong WANG/Documents/GitHub/';      
+    addpath([basedir,'fvcom-toolbox/custom/']);
+    addpath([basedir,'fvcom-toolbox/utilities/']);
+end
+
+%%%------------------------------------------------------------------------
+%%%                          INPUT CONFIGURATION
+%%%------------------------------------------------------------------------
+formatSpec = '%02i';
+td = load("./wa_mesh.mat");
+wa = td.mwa;
+clear td;
+if exist('../../wa_files', 'dir')~=7
+    mkdir('../../wa_files')
+end
+folderpath = {...
+    'meiji','present',...
+    };
+typelist = {'cu','cd'};
+layerlist = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+month = {'m09','m10','m11','m12',...
+    'm01','m02','m03','m04','m05','m06',...
+    'm07','m08'};
+f = 1
+
+f =
+
+     1
+
+c = 1
+
+c =
+
+     1
+
+l = 1
+
+l =
+
+     1
+
+layer = layerlist(l);
+m = 1
+
+m =
+
+     1
+
+data = wa.(folderpath{f}).(typelist{c}).(month{m})(:,:,layer);
+waterage
+for f = 1:length(folderpath)
+    for c = 1:length(typelist)
+        for l = 1:length(layerlist)
+            layer = layerlist(l);
+            for m = 1:length(month)
+                wa_dif.(typelist{c}).(month{m})(:,:,layer) = ...
+                    mwa.present.(typelist{c}).(month{m})(:,:,layer) - ...
+                    mwa.meiji.(typelist{c}).(month{m})(:,:,layer);
+                wa_dif.lon = mwa.lon;
+                wa_dif.lat = mwa.lat;
+            end
+        end
+    end
+end
+save('wa_dif.mat','wa_dif','-v7.3','-nocompression');
+Error: <a href="matlab: opentoline('/Users/yulong/GitHub/study_case1_plus/fvcom_files/post/wa2csv.m',49,1)">File: wa2csv.m Line: 49 Column: 1
+</a>At least one END is missing: the statement may begin here.
+
+clear all;
+clearvars; 
+clc;
+
+delete('diary')
+[Warning: File 'diary' not found.] 
+diary on;
+% Which system am I using?
+if ismac        % On Mac
+    basedir = '/Users/yulong/GitHub/';
+    addpath([basedir,'fvcomtoolbox/custom/']);
+    addpath([basedir,'fvcomtoolbox/utilities/']);
+elseif isunix	% Unix?
+    basedir = '/home/usr0/n70110d/';
+    addpath([basedir,'github/fvcomtoolbox/custom/']);
+    addpath([basedir,'github/fvcomtoolbox/utilities/']);
+elseif ispc     % Or Windows?
+    basedir = 'C:/Users/Yulong WANG/Documents/GitHub/';      
+    addpath([basedir,'fvcom-toolbox/custom/']);
+    addpath([basedir,'fvcom-toolbox/utilities/']);
+end
+
+%%%------------------------------------------------------------------------
+%%%                          INPUT CONFIGURATION
+%%%------------------------------------------------------------------------
+formatSpec = '%02i';
+td = load("./wa_mesh.mat");
+mwa = td.mwa;
+clear td;
+if exist('../../wa_files', 'dir')~=7
+    mkdir('../../wa_files')
+end
+folderpath = {'meiji','present'};
+typelist = {'cu','cd'};
+layerlist = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+month = {'m09','m10','m11','m12',...
+    'm01','m02','m03','m04','m05','m06',...
+    'm07','m08'};
+f = 1
+
+f =
+
+     1
+
+c = 1
+
+c =
+
+     1
+
+l = 1
+
+l =
+
+     1
+
+layer = layerlist(l);
+m = 1
+
+m =
+
+     1
+
+data = mwa.(folderpath{f}).(typelist{c}).(month{m})(:,:,layer);
+data_temp.latint = mwa.lat;
+                data_temp.lonint = mwa.lon;
+                [Y,X] = meshgrid(data_temp.latint,data_temp.lonint);
+M = [reshape(X,[numel(X),1]),...
+                    reshape(Y,[numel(Y),1]),...
+                    reshape(data_temp.ageint,[numel(data_temp.ageint),1])];
+{Reference to non-existent field 'ageint'.
+} 
+data_temp.latint = mwa.lat;
+                data_temp.lonint = mwa.lon;
+                [Y,X] = meshgrid(data_temp.latint,data_temp.lonint);
+                M = [reshape(X,[numel(X),1]),...
+                    reshape(Y,[numel(Y),1]),...
+                    reshape(data,[numel(data),1])];
+folderpath{f}
+
+ans =
+
+    'meiji'
+
+for f = 1:length(folderpath)
+    for c = 1:length(typelist)
+        for l = 1:length(layerlist)
+            layer = layerlist(l);
+            for m = 1:length(month)
+                data = mwa.(folderpath{f}).(typelist{c}).(month{m})(:,:,layer);
+
+                % Create csv
+                data_temp.latint = mwa.lat;
+                data_temp.lonint = mwa.lon;
+                [Y,X] = meshgrid(data_temp.latint,data_temp.lonint);
+                M = [reshape(X,[numel(X),1]),...
+                    reshape(Y,[numel(Y),1]),...
+                    reshape(data,[numel(data),1])];
+                if exist('../../wa_files', 'dir')~=7
+                    mkdir('../../wa_files')
+                end
+                filename = [folderpath{f},'_',typelist{c},'_',month{m},'_',num2str(layer,formatSpec)];
+                otfile_csv = ['../../wa_files/',...
+                     filename,'.csv'];
+                fileID = fopen(otfile_csv,'w');
+                % fprintf(fileID,'%12s %12s %12s\n','lon,','lat,','age,');
+                for i = 1:length(M)
+                    fprintf(fileID,'%11.6f%1s %11.6f%1s %11.2f%1s\n',...
+                        M(i,1),',',M(i,2),',',M(i,3),',');
+                end
+                fclose(fileID);
+            end
+        end
+    end
+end
+Undefined variable "wa" or class "wa.meiji.cu.m09".
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('waterage', '/Users/yulong/GitHub/study_case1_plus/fvcom_files/post/waterage.m', 70)" style="font-weight:bold">waterage</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/study_case1_plus/fvcom_files/post/waterage.m',70,0)">line 70</a>)
+                data1 =
+                double(wa.(folderpath{f}).(typelist{c}).(month{m})(:,layer));
+
+waterage
+Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('geodata', '/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m', 86)" style="font-weight:bold">geodata</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m',86,0)">line 86</a>)
+Where's m_map? Please read the user guide
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('genMesh_tokyobay', '/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m', 50)" style="font-weight:bold">genMesh_tokyobay</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m',50,0)">line 50</a>)
+gdat_01 = geodata('shp',coastline_01,...
+
+genMesh_tokyobay
+[Warning: Name is nonexistent or not a directory:
+/Users/yulong/GitHub/map_lab/m_map] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('path', '/Applications/MATLAB_R2019a.app/toolbox/matlab/general/path.m', 109)" style="font-weight:bold">path</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2019a.app/toolbox/matlab/general/path.m',109,0)">line 109</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('addpath', '/Applications/MATLAB_R2019a.app/toolbox/matlab/general/addpath.m', 86)" style="font-weight:bold">addpath</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2019a.app/toolbox/matlab/general/addpath.m',86,0)">line 86</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('genMesh_tokyobay', '/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m', 6)" style="font-weight:bold">genMesh_tokyobay</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m',6,0)">line 6</a>)] 
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('geodata', '/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m', 86)" style="font-weight:bold">geodata</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m',86,0)">line 86</a>)
+Where's m_map? Please read the user guide
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('genMesh_tokyobay', '/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m', 50)" style="font-weight:bold">genMesh_tokyobay</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m',50,0)">line 50</a>)
+gdat_01 = geodata('shp',coastline_01,...
+} 
+genMesh_tokyobay
+[Warning: Name is nonexistent or not a directory:
+/Users/yulong/GitHub/map_lab/m_map] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('path', '/Applications/MATLAB_R2019a.app/toolbox/matlab/general/path.m', 109)" style="font-weight:bold">path</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2019a.app/toolbox/matlab/general/path.m',109,0)">line 109</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('addpath', '/Applications/MATLAB_R2019a.app/toolbox/matlab/general/addpath.m', 86)" style="font-weight:bold">addpath</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2019a.app/toolbox/matlab/general/addpath.m',86,0)">line 86</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('genMesh_tokyobay', '/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m', 6)" style="font-weight:bold">genMesh_tokyobay</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m',6,0)">line 6</a>)] 
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('geodata', '/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m', 86)" style="font-weight:bold">geodata</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m',86,0)">line 86</a>)
+Where's m_map? Please read the user guide
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('genMesh_tokyobay', '/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m', 50)" style="font-weight:bold">genMesh_tokyobay</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m',50,0)">line 50</a>)
+gdat_01 = geodata('shp',coastline_01,...
+} 
+genMesh_tokyobay
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('geodata', '/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m', 95)" style="font-weight:bold">geodata</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m',95,0)">line 95</a>)
+Where's the utilities directory? Please read the user guide
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('genMesh_tokyobay', '/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m', 50)" style="font-weight:bold">genMesh_tokyobay</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m',50,0)">line 50</a>)
+gdat_01 = geodata('shp',coastline_01,...
+} 
+genMesh_tokyobay
+[Warning: We suggest you to place your files in a directory called "datasets".
+Please read the user guide] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('geodata', '/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m', 104)" style="font-weight:bold">geodata</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m',104,0)">line 104</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('genMesh_tokyobay', '/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m', 50)" style="font-weight:bold">genMesh_tokyobay</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m',50,0)">line 50</a>)] 
+Read shapefile with shaperead
+Partitioning the boundary into islands, mainland, ocean
+Smoothing coastline with 5 point window
+Warning: Shapefile is unconnected... continuing anyway
+Reading shapefile with m_shaperead
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('m_shaperead', '/Users/yulong/GitHub/map_lab_full/m_map/m_shaperead.m', 60)" style="font-weight:bold">m_shaperead</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/map_lab_full/m_map/m_shaperead.m',60,0)">line 60</a>)
+Cannot file filename: GSHHS_l_L1.shx
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Read_shapefile', '/Users/yulong/GitHub/OceanMesh2D/@geodata/private/Read_shapefile.m', 62)" style="font-weight:bold">Read_shapefile</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/OceanMesh2D/@geodata/private/Read_shapefile.m',62,0)">line 62</a>)
+                S = m_shaperead(fname{1},reshape(bboxt',4,1));
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('geodata/check_connectedness_inpoly', '/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m', 654)" style="font-weight:bold">geodata/check_connectedness_inpoly</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m',654,0)">line 654</a>)
+            ps = Read_shapefile( {'GSHHS_l_L1'}, [], ...
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('geodata', '/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m', 301)" style="font-weight:bold">geodata</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m',301,0)">line 301</a>)
+            obj = check_connectedness_inpoly(obj);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('genMesh_tokyobay', '/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m', 50)" style="font-weight:bold">genMesh_tokyobay</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m',50,0)">line 50</a>)
+gdat_01 = geodata('shp',coastline_01,...
+} 
+genMesh_tokyobay
+[Warning: We suggest you to place your files in a directory called "datasets".
+Please read the user guide] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('geodata', '/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m', 104)" style="font-weight:bold">geodata</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m',104,0)">line 104</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('genMesh_tokyobay', '/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m', 50)" style="font-weight:bold">genMesh_tokyobay</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m',50,0)">line 50</a>)] 
+Read shapefile with shaperead
+Partitioning the boundary into islands, mainland, ocean
+Smoothing coastline with 5 point window
+Warning: Shapefile is unconnected... continuing anyway
+Read shapefile with shaperead
+Partitioning the boundary into islands, mainland, ocean
+    'Read in meshing boundary: '    'C23-06_TOKYOBAY'
+
+[Warning: DEM will be downsampled by a stride of 3 to match h0] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('geodata/ParseDEM', '/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m', 514)" style="font-weight:bold">geodata/ParseDEM</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m',514,0)">line 514</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('geodata', '/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m', 309)" style="font-weight:bold">geodata</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m',309,0)">line 309</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('genMesh_tokyobay', '/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m', 50)" style="font-weight:bold">genMesh_tokyobay</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m',50,0)">line 50</a>)] 
+Read in demfile depth_0270-03.nc
+Building feature size function...
+Memory management: number of loops in dpoly = 1
+Elapsed time is 0.386799 seconds.
+Building wavelength function...
+Building slope function...
+INFO: Rossby radius of deformation filter on.
+INFO: Using barotropic Rossby radius.
+Elapsed time is 1.414176 seconds.
+--------------------------------------------------
+Releasing individual edge functions from memory...
+--------------------------------------------------
+Relaxing the mesh size gradient
+Gradient relaxing converged!
+Enforcing timestep of 16.2135 seconds with Courant number bounds of 2.2204e-16 to 0.5
+Finalized edge function!
+[Warning: We suggest you to place your files in a directory called
+"datasets". Please read the user guide] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('geodata', '/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m', 104)" style="font-weight:bold">geodata</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m',104,0)">line 104</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('genMesh_tokyobay', '/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m', 83)" style="font-weight:bold">genMesh_tokyobay</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m',83,0)">line 83</a>)] 
+Read shapefile with shaperead
+Partitioning the boundary into islands, mainland, ocean
+Smoothing coastline with 5 point window
+Warning: Shapefile is unconnected... continuing anyway
+Read shapefile with shaperead
+Partitioning the boundary into islands, mainland, ocean
+    'Read in meshing boundary: '    'C23-06_TOKYOBAY_OUTER'
+
+[Warning: DEM will be downsampled by a stride of 3 to match h0] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('geodata/ParseDEM', '/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m', 514)" style="font-weight:bold">geodata/ParseDEM</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m',514,0)">line 514</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('geodata', '/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m', 309)" style="font-weight:bold">geodata</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m',309,0)">line 309</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('genMesh_tokyobay', '/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m', 83)" style="font-weight:bold">genMesh_tokyobay</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m',83,0)">line 83</a>)] 
+Read in demfile depth_0090-05+06+07.nc
+Building feature size function...
+Memory management: number of loops in dpoly = 1
+Elapsed time is 0.250797 seconds.
+Building wavelength function...
+Building slope function...
+INFO: Rossby radius of deformation filter on.
+INFO: Using barotropic Rossby radius.
+Elapsed time is 0.143346 seconds.
+--------------------------------------------------
+Releasing individual edge functions from memory...
+--------------------------------------------------
+Relaxing the mesh size gradient
+Gradient relaxing converged!
+Enforcing timestep of 6.8326 seconds with Courant number bounds of 2.2204e-16 to 0.5
+Finalized edge function!
+[Warning: We suggest you to place your files in a directory called
+"datasets". Please read the user guide] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('geodata', '/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m', 104)" style="font-weight:bold">geodata</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m',104,0)">line 104</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('genMesh_tokyobay', '/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m', 115)" style="font-weight:bold">genMesh_tokyobay</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m',115,0)">line 115</a>)] 
+Read shapefile with shaperead
+Partitioning the boundary into islands, mainland, ocean
+Smoothing coastline with 5 point window
+Warning: Shapefile is unconnected... continuing anyway
+Read shapefile with shaperead
+Partitioning the boundary into islands, mainland, ocean
+    'Read in meshing boundary: '    'C23-06_TOKYOBAY_INNER'
+
+[Warning: DEM will be downsampled by a stride of 3 to match h0] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('geodata/ParseDEM', '/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m', 514)" style="font-weight:bold">geodata/ParseDEM</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m',514,0)">line 514</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('geodata', '/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m', 309)" style="font-weight:bold">geodata</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m',309,0)">line 309</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('genMesh_tokyobay', '/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m', 115)" style="font-weight:bold">genMesh_tokyobay</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m',115,0)">line 115</a>)] 
+Read in demfile depth_0030-11+12+13+14+15.nc
+Building feature size function...
+Memory management: number of loops in dpoly = 1
+Elapsed time is 0.723733 seconds.
+Building wavelength function...
+Building slope function...
+INFO: Rossby radius of deformation filter on.
+INFO: Using barotropic Rossby radius.
+Elapsed time is 0.321934 seconds.
+--------------------------------------------------
+Releasing individual edge functions from memory...
+--------------------------------------------------
+Relaxing the mesh size gradient
+Gradient relaxing converged!
+Enforcing timestep of 2.5028 seconds with Courant number bounds of 2.2204e-16 to 0.5
+Finalized edge function!
+[Warning: We suggest you to place your files in a folder called datasets.
+Please read the user guide] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('msh', '/Users/yulong/GitHub/OceanMesh2D/@msh/msh.m', 82)" style="font-weight:bold">msh</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/OceanMesh2D/@msh/msh.m',82,0)">line 82</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('genMesh_tokyobay', '/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m', 128)" style="font-weight:bold">genMesh_tokyobay</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m',128,0)">line 128</a>)] 
+Relaxing the gradient of #2 outer edgefx using #3 inner edgefxs
+Gradient relaxing converged!
+Relaxing the gradient of #1 outer edgefx using #2  3 inner edgefxs
+Gradient relaxing converged!
+[Warning: We suggest you to place your files in a folder called datasets.
+Please read the user guide] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('msh', '/Users/yulong/GitHub/OceanMesh2D/@msh/msh.m', 82)" style="font-weight:bold">msh</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/OceanMesh2D/@msh/msh.m',82,0)">line 82</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('meshgen', '/Users/yulong/GitHub/OceanMesh2D/@meshgen/meshgen.m', 378)" style="font-weight:bold">meshgen</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/OceanMesh2D/@meshgen/meshgen.m',378,0)">line 378</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('genMesh_tokyobay', '/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m', 128)" style="font-weight:bold">genMesh_tokyobay</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m',128,0)">line 128</a>)] 
+Current mapping parameters -
+ Projection: Equidistant Cylindrical  (function: mp_cyl)
+ longitudes: 138.6016      140.9331                     
+ Latitudes: 34.205      36.4001                         
+Forming initial point distribution...
+    for box #1
+    for box #2
+    for box #3
+Using 0 fixed points.
+Number of initial points after rejection is 14684
+Elapsed time is 1.970330 seconds.
+ ------------------------------------------------------->
+Begin iterating...
+Elapsed time is 4.195014 seconds.
+Elapsed time is 0.449640 seconds.
+Elapsed time is 0.438350 seconds.
+Elapsed time is 0.409990 seconds.
+Iteration =5
+Number of nodes is 14684
+Mean mesh quality is 0.8644
+Min mesh quality is 0.033112
+3rd sigma lower mesh quality is 0.39679
+Elapsed time is 0.741640 seconds.
+Elapsed time is 0.371584 seconds.
+Elapsed time is 0.436004 seconds.
+Elapsed time is 0.420286 seconds.
+Elapsed time is 0.397649 seconds.
+Iteration =10
+Number of nodes is 14684
+Mean mesh quality is 0.89072
+Min mesh quality is 0.031952
+3rd sigma lower mesh quality is 0.48107
+Elapsed time is 0.836717 seconds.
+Elapsed time is 0.380669 seconds.
+Elapsed time is 0.360677 seconds.
+Elapsed time is 0.406980 seconds.
+Elapsed time is 0.409788 seconds.
+Iteration =15
+Number of nodes is 14684
+Mean mesh quality is 0.9039
+Min mesh quality is 0.029586
+3rd sigma lower mesh quality is 0.52692
+Elapsed time is 0.753251 seconds.
+Elapsed time is 0.451040 seconds.
+Elapsed time is 1.365384 seconds.
+Elapsed time is 0.495118 seconds.
+Elapsed time is 0.661259 seconds.
+Iteration =20
+Number of nodes is 14684
+Mean mesh quality is 0.91142
+Min mesh quality is 0.025937
+3rd sigma lower mesh quality is 0.55097
+Deleting 417 due to small connectivity
+Deleting 485 points too close together
+Adding 168 points.
+Elapsed time is 0.791742 seconds.
+Elapsed time is 0.624538 seconds.
+Elapsed time is 0.413287 seconds.
+Elapsed time is 0.348649 seconds.
+Iteration =25
+Number of nodes is 13971
+Mean mesh quality is 0.92102
+Min mesh quality is 0.03989
+3rd sigma lower mesh quality is 0.6189
+Elapsed time is 0.705756 seconds.
+Elapsed time is 0.439617 seconds.
+Elapsed time is 0.457222 seconds.
+Elapsed time is 0.393750 seconds.
+Elapsed time is 0.340202 seconds.
+Iteration =30
+Number of nodes is 13971
+Mean mesh quality is 0.92582
+Min mesh quality is 0.029987
+3rd sigma lower mesh quality is 0.63677
+Deleting 90 due to small connectivity
+Deleting 68 points too close together
+Adding 56 points.
+Elapsed time is 0.379310 seconds.
+Elapsed time is 0.517328 seconds.
+Elapsed time is 0.511844 seconds.
+Elapsed time is 0.462378 seconds.
+Iteration =35
+Number of nodes is 13870
+Mean mesh quality is 0.92975
+Min mesh quality is 0.042699
+3rd sigma lower mesh quality is 0.66148
+Elapsed time is 0.685868 seconds.
+Elapsed time is 0.406563 seconds.
+Elapsed time is 0.369100 seconds.
+Elapsed time is 0.386563 seconds.
+Elapsed time is 0.461950 seconds.
+Iteration =40
+Number of nodes is 13870
+Mean mesh quality is 0.93135
+Min mesh quality is 0.027607
+3rd sigma lower mesh quality is 0.66408
+Deleting 65 due to small connectivity
+Deleting 18 points too close together
+Adding 42 points.
+Elapsed time is 0.385410 seconds.
+Elapsed time is 0.387666 seconds.
+Elapsed time is 0.350270 seconds.
+Elapsed time is 0.350764 seconds.
+Iteration =45
+Number of nodes is 13829
+Mean mesh quality is 0.93319
+Min mesh quality is 0.032871
+3rd sigma lower mesh quality is 0.6722
+Elapsed time is 0.871768 seconds.
+Elapsed time is 0.443308 seconds.
+Elapsed time is 0.347651 seconds.
+Elapsed time is 0.380890 seconds.
+Elapsed time is 0.352876 seconds.
+Iteration =50
+Quality of mesh is good enough, exit
+Finished iterating...
+ ------------------------------------------------------->
+Beginning mesh cleaning and smoothing operations...
+Employing default (medium) option or user-specified opts
+INFO: The following cleaning options have been enabled..
+          db: 0.2500
+          ds: 1
+         con: 9
+         djc: 0.2500
+    sc_maxit: 1
+         mqa: 0.2500
+     nscreen: 5
+       projL: 1
+
+length of pfix = 0
+Deleted 35 bad boundary elements
+Removed 0 thin triangles!
+Entry: Making mesh boundaries traversable...
+  ACCEPTED: deleting 190 elements outside main mesh
+  ACCEPTED: deleting 23 elements inside main mesh
+  ACCEPTED: deleting 0 elements outside main mesh
+  ACCEPTED: deleting 4 elements inside main mesh
+Exit: finished making mesh boundaries traversable..
+  ACCEPTED: deleted 122 bad elements that are connected to a single neighboring element 
+Initial bandwidth is 12542
+Renumbered bandwidth is 207
+[Warning: Could not reduce connectivity mesh] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('msh/clean', '/Users/yulong/GitHub/OceanMesh2D/@msh/msh.m', 1129)" style="font-weight:bold">msh/clean</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/OceanMesh2D/@msh/msh.m',1129,0)">line 1129</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('meshgen/build', '/Users/yulong/GitHub/OceanMesh2D/@meshgen/meshgen.m', 838)" style="font-weight:bold">meshgen/build</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/OceanMesh2D/@meshgen/meshgen.m',838,0)">line 838</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('genMesh_tokyobay', '/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m', 134)" style="font-weight:bold">genMesh_tokyobay</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m',134,0)">line 134</a>)] 
+ALERT: beginning implicit smoothing of mesh..
+ALERT: finished implicit smoothing of mesh..
+number of nodes is 13444
+mean quality is 0.96185
+min quality is 0.25299
+All elements now in counterclockwise order
+Bounding minimum depth to 0.05 meters.
+Looping over the DEM 1 time(s)
+Performing cell-averaging with Ny(max) 7 and Nx(max)9
+Elapsed time is 0.840320 seconds.
+Bounding minimum depth to 0.05 meters.
+Looping over the DEM 1 time(s)
+Performing cell-averaging with Ny(max) 8 and Nx(max)13
+Elapsed time is 0.671872 seconds.
+Bounding minimum depth to 0.05 meters.
+Looping over the DEM 1 time(s)
+Performing cell-averaging with Ny(max) 15 and Nx(max)18
+Elapsed time is 0.548441 seconds.
+Maximum topographic gradient is 0.69688
+[Warning: Maximum topographic gradient is larger than 0.1, which might cause
+problems for simulation. Consider using the "lim_bathy_slope" msh class
+method] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('msh/interp', '/Users/yulong/GitHub/OceanMesh2D/@msh/msh.m', 984)" style="font-weight:bold">msh/interp</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/OceanMesh2D/@msh/msh.m',984,0)">line 984</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('genMesh_tokyobay', '/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m', 138)" style="font-weight:bold">genMesh_tokyobay</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m',138,0)">line 138</a>)] 
+Current mapping parameters -
+ Projection: Equidistant Cylindrical  (function: mp_cyl)
+ longitudes: 139.1423      140.3908                     
+ Latitudes: 34.746      35.7679                         
+Current mapping parameters -
+ Projection: Equidistant Cylindrical  (function: mp_cyl)
+ longitudes: 139.1423      140.3908                     
+ Latitudes: 34.746      35.7679                         
+Current mapping parameters -
+ Projection: Equidistant Cylindrical  (function: mp_cyl)
+ longitudes: 139.1423      140.3908                     
+ Latitudes: 34.746      35.7679                         
+write adcirc fort.14
+OceanMesh2D
+genMesh_tokyobay
+[Warning: We suggest you to place your files in a directory called "datasets".
+Please read the user guide] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('geodata', '/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m', 104)" style="font-weight:bold">geodata</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m',104,0)">line 104</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('genMesh_tokyobay', '/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m', 50)" style="font-weight:bold">genMesh_tokyobay</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m',50,0)">line 50</a>)] 
+Read shapefile with shaperead
+Partitioning the boundary into islands, mainland, ocean
+Smoothing coastline with 5 point window
+Warning: Shapefile is unconnected... continuing anyway
+Read shapefile with shaperead
+Partitioning the boundary into islands, mainland, ocean
+    'Read in meshing boundary: '    'C23-06_TOKYOBAY'
+
+[Warning: DEM will be downsampled by a stride of 3 to match h0] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('geodata/ParseDEM', '/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m', 514)" style="font-weight:bold">geodata/ParseDEM</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m',514,0)">line 514</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('geodata', '/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m', 309)" style="font-weight:bold">geodata</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m',309,0)">line 309</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('genMesh_tokyobay', '/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m', 50)" style="font-weight:bold">genMesh_tokyobay</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m',50,0)">line 50</a>)] 
+Read in demfile depth_0270-03.nc
+Building feature size function...
+Memory management: number of loops in dpoly = 1
+Elapsed time is 0.209165 seconds.
+Building wavelength function...
+Building slope function...
+INFO: Rossby radius of deformation filter on.
+INFO: Using barotropic Rossby radius.
+Elapsed time is 0.202330 seconds.
+--------------------------------------------------
+Releasing individual edge functions from memory...
+--------------------------------------------------
+Relaxing the mesh size gradient
+Gradient relaxing converged!
+Enforcing timestep of 16.2135 seconds with Courant number bounds of 2.2204e-16 to 0.5
+Finalized edge function!
+[Warning: We suggest you to place your files in a directory called
+"datasets". Please read the user guide] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('geodata', '/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m', 104)" style="font-weight:bold">geodata</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m',104,0)">line 104</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('genMesh_tokyobay', '/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m', 83)" style="font-weight:bold">genMesh_tokyobay</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m',83,0)">line 83</a>)] 
+Read shapefile with shaperead
+Partitioning the boundary into islands, mainland, ocean
+Smoothing coastline with 5 point window
+Warning: Shapefile is unconnected... continuing anyway
+Read shapefile with shaperead
+Partitioning the boundary into islands, mainland, ocean
+    'Read in meshing boundary: '    'C23-06_TOKYOBAY_OUTER'
+
+[Warning: DEM will be downsampled by a stride of 3 to match h0] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('geodata/ParseDEM', '/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m', 514)" style="font-weight:bold">geodata/ParseDEM</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m',514,0)">line 514</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('geodata', '/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m', 309)" style="font-weight:bold">geodata</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m',309,0)">line 309</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('genMesh_tokyobay', '/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m', 83)" style="font-weight:bold">genMesh_tokyobay</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m',83,0)">line 83</a>)] 
+Read in demfile depth_0090-05+06+07.nc
+Building feature size function...
+Memory management: number of loops in dpoly = 1
+Elapsed time is 0.189936 seconds.
+Building wavelength function...
+Building slope function...
+INFO: Rossby radius of deformation filter on.
+INFO: Using barotropic Rossby radius.
+Elapsed time is 0.120019 seconds.
+--------------------------------------------------
+Releasing individual edge functions from memory...
+--------------------------------------------------
+Relaxing the mesh size gradient
+Gradient relaxing converged!
+Enforcing timestep of 6.8326 seconds with Courant number bounds of 2.2204e-16 to 0.5
+Finalized edge function!
+[Warning: We suggest you to place your files in a directory called
+"datasets". Please read the user guide] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('geodata', '/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m', 104)" style="font-weight:bold">geodata</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m',104,0)">line 104</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('genMesh_tokyobay', '/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m', 115)" style="font-weight:bold">genMesh_tokyobay</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m',115,0)">line 115</a>)] 
+Read shapefile with shaperead
+Partitioning the boundary into islands, mainland, ocean
+Smoothing coastline with 5 point window
+Warning: Shapefile is unconnected... continuing anyway
+Read shapefile with shaperead
+Partitioning the boundary into islands, mainland, ocean
+    'Read in meshing boundary: '    'C23-06_TOKYOBAY_INNER'
+
+[Warning: DEM will be downsampled by a stride of 3 to match h0] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('geodata/ParseDEM', '/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m', 514)" style="font-weight:bold">geodata/ParseDEM</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m',514,0)">line 514</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('geodata', '/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m', 309)" style="font-weight:bold">geodata</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/OceanMesh2D/@geodata/geodata.m',309,0)">line 309</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('genMesh_tokyobay', '/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m', 115)" style="font-weight:bold">genMesh_tokyobay</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m',115,0)">line 115</a>)] 
+Read in demfile depth_0030-11+12+13+14+15.nc
+Building feature size function...
+Memory management: number of loops in dpoly = 1
+Elapsed time is 0.821891 seconds.
+Building wavelength function...
+Building slope function...
+INFO: Rossby radius of deformation filter on.
+INFO: Using barotropic Rossby radius.
+Elapsed time is 0.239855 seconds.
+--------------------------------------------------
+Releasing individual edge functions from memory...
+--------------------------------------------------
+Relaxing the mesh size gradient
+Gradient relaxing converged!
+Enforcing timestep of 2.5028 seconds with Courant number bounds of 2.2204e-16 to 0.5
+Finalized edge function!
+Relaxing the gradient of #2 outer edgefx using #3 inner edgefxs
+Gradient relaxing converged!
+Relaxing the gradient of #1 outer edgefx using #2  3 inner edgefxs
+Gradient relaxing converged!
+[Warning: We suggest you to place your files in a folder called datasets.
+Please read the user guide] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('msh', '/Users/yulong/GitHub/OceanMesh2D/@msh/msh.m', 82)" style="font-weight:bold">msh</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/OceanMesh2D/@msh/msh.m',82,0)">line 82</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('meshgen', '/Users/yulong/GitHub/OceanMesh2D/@meshgen/meshgen.m', 378)" style="font-weight:bold">meshgen</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/OceanMesh2D/@meshgen/meshgen.m',378,0)">line 378</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('genMesh_tokyobay', '/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m', 128)" style="font-weight:bold">genMesh_tokyobay</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m',128,0)">line 128</a>)] 
+Current mapping parameters -
+ Projection: Equidistant Cylindrical  (function: mp_cyl)
+ longitudes: 138.6016      140.9331                     
+ Latitudes: 34.205      36.4001                         
+Forming initial point distribution...
+    for box #1
+    for box #2
+    for box #3
+Using 0 fixed points.
+Number of initial points after rejection is 14626
+Elapsed time is 0.863239 seconds.
+ ------------------------------------------------------->
+Begin iterating...
+Elapsed time is 1.573482 seconds.
+Elapsed time is 0.400577 seconds.
+Elapsed time is 0.490060 seconds.
+Elapsed time is 0.413512 seconds.
+Iteration =5
+Number of nodes is 14626
+Mean mesh quality is 0.8666
+Min mesh quality is 0.033091
+3rd sigma lower mesh quality is 0.39976
+Elapsed time is 0.649045 seconds.
+Elapsed time is 0.353706 seconds.
+Elapsed time is 0.366327 seconds.
+Elapsed time is 0.384943 seconds.
+Elapsed time is 0.406942 seconds.
+Iteration =10
+Number of nodes is 14626
+Mean mesh quality is 0.8927
+Min mesh quality is 0.030162
+3rd sigma lower mesh quality is 0.48559
+Elapsed time is 0.771520 seconds.
+Elapsed time is 0.429011 seconds.
+Elapsed time is 0.356740 seconds.
+Elapsed time is 0.366831 seconds.
+Elapsed time is 0.374358 seconds.
+Iteration =15
+Number of nodes is 14626
+Mean mesh quality is 0.9056
+Min mesh quality is 0.026831
+3rd sigma lower mesh quality is 0.5342
+Elapsed time is 0.593446 seconds.
+Elapsed time is 0.393336 seconds.
+Elapsed time is 0.378570 seconds.
+Elapsed time is 0.481266 seconds.
+Elapsed time is 0.392581 seconds.
+Iteration =20
+Number of nodes is 14626
+Mean mesh quality is 0.91282
+Min mesh quality is 0.025686
+3rd sigma lower mesh quality is 0.55805
+Deleting 425 due to small connectivity
+Deleting 491 points too close together
+Adding 160 points.
+Elapsed time is 0.400921 seconds.
+Elapsed time is 0.387986 seconds.
+Elapsed time is 0.516607 seconds.
+Elapsed time is 0.407975 seconds.
+Iteration =25
+Number of nodes is 13894
+Mean mesh quality is 0.92147
+Min mesh quality is 0.029571
+3rd sigma lower mesh quality is 0.61924
+Elapsed time is 0.818311 seconds.
+Elapsed time is 0.370602 seconds.
+Elapsed time is 0.363854 seconds.
+Elapsed time is 0.351863 seconds.
+Elapsed time is 0.377364 seconds.
+Iteration =30
+Number of nodes is 13894
+Mean mesh quality is 0.92512
+Min mesh quality is 0.030565
+3rd sigma lower mesh quality is 0.6305
+Deleting 108 due to small connectivity
+Deleting 54 points too close together
+Adding 67 points.
+Elapsed time is 0.460692 seconds.
+Elapsed time is 0.371034 seconds.
+Elapsed time is 0.435210 seconds.
+Elapsed time is 0.539946 seconds.
+Iteration =35
+Number of nodes is 13800
+Mean mesh quality is 0.92939
+Min mesh quality is 0.02543
+3rd sigma lower mesh quality is 0.65683
+Elapsed time is 0.799834 seconds.
+Elapsed time is 0.428023 seconds.
+Elapsed time is 0.396003 seconds.
+Elapsed time is 0.436090 seconds.
+Elapsed time is 0.352625 seconds.
+Iteration =40
+Number of nodes is 13800
+Mean mesh quality is 0.9312
+Min mesh quality is 0.037682
+3rd sigma lower mesh quality is 0.66268
+Deleting 60 due to small connectivity
+Deleting 12 points too close together
+Adding 55 points.
+Elapsed time is 0.380412 seconds.
+Elapsed time is 0.445795 seconds.
+Elapsed time is 0.392215 seconds.
+Elapsed time is 0.398283 seconds.
+Iteration =45
+Number of nodes is 13783
+Mean mesh quality is 0.93313
+Min mesh quality is 0.023865
+3rd sigma lower mesh quality is 0.67778
+Elapsed time is 0.621273 seconds.
+Elapsed time is 0.354623 seconds.
+Elapsed time is 0.356547 seconds.
+Elapsed time is 0.368417 seconds.
+Elapsed time is 0.394381 seconds.
+Iteration =50
+Number of nodes is 13783
+Mean mesh quality is 0.93456
+Min mesh quality is 0.025795
+3rd sigma lower mesh quality is 0.67996
+Deleting 38 due to small connectivity
+Deleting 24 points too close together
+Adding 33 points.
+Elapsed time is 0.427355 seconds.
+Elapsed time is 0.351604 seconds.
+Elapsed time is 0.352714 seconds.
+Elapsed time is 0.363486 seconds.
+Iteration =55
+Number of nodes is 13754
+Mean mesh quality is 0.93635
+Min mesh quality is 0.031813
+3rd sigma lower mesh quality is 0.69369
+Elapsed time is 0.547151 seconds.
+Elapsed time is 0.385594 seconds.
+Elapsed time is 0.391294 seconds.
+Elapsed time is 0.392947 seconds.
+Elapsed time is 0.375542 seconds.
+Iteration =60
+Number of nodes is 13754
+Mean mesh quality is 0.9368
+Min mesh quality is 0.03754
+3rd sigma lower mesh quality is 0.6904
+Deleting 37 due to small connectivity
+Deleting 4 points too close together
+Adding 39 points.
+Elapsed time is 0.409636 seconds.
+Elapsed time is 0.350417 seconds.
+Elapsed time is 0.394065 seconds.
+Elapsed time is 0.395536 seconds.
+Iteration =65
+Number of nodes is 13752
+Mean mesh quality is 0.9377
+Min mesh quality is 0.034737
+3rd sigma lower mesh quality is 0.6962
+Elapsed time is 0.767670 seconds.
+Elapsed time is 0.357431 seconds.
+Elapsed time is 0.365986 seconds.
+Elapsed time is 0.359172 seconds.
+Elapsed time is 0.354655 seconds.
+Iteration =70
+Quality of mesh is good enough, exit
+Finished iterating...
+ ------------------------------------------------------->
+Beginning mesh cleaning and smoothing operations...
+Employing default (medium) option or user-specified opts
+INFO: The following cleaning options have been enabled..
+          db: 0.2500
+          ds: 1
+         con: 9
+         djc: 0.2500
+    sc_maxit: 1
+         mqa: 0.2500
+     nscreen: 5
+       projL: 1
+
+length of pfix = 0
+Deleted 19 bad boundary elements
+Removed 0 thin triangles!
+Entry: Making mesh boundaries traversable...
+  ACCEPTED: deleting 154 elements outside main mesh
+  ACCEPTED: deleting 22 elements inside main mesh
+  ACCEPTED: deleting 0 elements outside main mesh
+  ACCEPTED: deleting 2 elements inside main mesh
+  ACCEPTED: deleting 0 elements outside main mesh
+  ACCEPTED: deleting 1 elements inside main mesh
+Exit: finished making mesh boundaries traversable..
+  ACCEPTED: deleted 129 bad elements that are connected to a single neighboring element 
+Initial bandwidth is 12891
+Renumbered bandwidth is 216
+[Warning: Could not reduce connectivity mesh] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('msh/clean', '/Users/yulong/GitHub/OceanMesh2D/@msh/msh.m', 1129)" style="font-weight:bold">msh/clean</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/OceanMesh2D/@msh/msh.m',1129,0)">line 1129</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('meshgen/build', '/Users/yulong/GitHub/OceanMesh2D/@meshgen/meshgen.m', 838)" style="font-weight:bold">meshgen/build</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/OceanMesh2D/@meshgen/meshgen.m',838,0)">line 838</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('genMesh_tokyobay', '/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m', 134)" style="font-weight:bold">genMesh_tokyobay</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m',134,0)">line 134</a>)] 
+ALERT: beginning implicit smoothing of mesh..
+ALERT: finished implicit smoothing of mesh..
+number of nodes is 13402
+mean quality is 0.96294
+min quality is 0.38993
+All elements now in counterclockwise order
+Bounding minimum depth to 0.05 meters.
+Looping over the DEM 1 time(s)
+Performing cell-averaging with Ny(max) 7 and Nx(max)9
+Elapsed time is 0.728268 seconds.
+Bounding minimum depth to 0.05 meters.
+Looping over the DEM 1 time(s)
+Performing cell-averaging with Ny(max) 10 and Nx(max)11
+Elapsed time is 0.582152 seconds.
+Bounding minimum depth to 0.05 meters.
+Looping over the DEM 1 time(s)
+Performing cell-averaging with Ny(max) 16 and Nx(max)19
+Elapsed time is 0.482728 seconds.
+Maximum topographic gradient is 0.52025
+[Warning: Maximum topographic gradient is larger than 0.1, which might cause
+problems for simulation. Consider using the "lim_bathy_slope" msh class
+method] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('msh/interp', '/Users/yulong/GitHub/OceanMesh2D/@msh/msh.m', 984)" style="font-weight:bold">msh/interp</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/OceanMesh2D/@msh/msh.m',984,0)">line 984</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('genMesh_tokyobay', '/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m', 138)" style="font-weight:bold">genMesh_tokyobay</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/pipeline/01_pre_pro/01_meshes/genMesh_tokyobay.m',138,0)">line 138</a>)] 
+Current mapping parameters -
+ Projection: Equidistant Cylindrical  (function: mp_cyl)
+ longitudes: 139.1422      140.3904                     
+ Latitudes: 34.7457      35.7677                        
+Current mapping parameters -
+ Projection: Equidistant Cylindrical  (function: mp_cyl)
+ longitudes: 139.1422      140.3904                     
+ Latitudes: 34.7457      35.7677                        
+Current mapping parameters -
+ Projection: Equidistant Cylindrical  (function: mp_cyl)
+ longitudes: 139.1422      140.3904                     
+ Latitudes: 34.7457      35.7677                        
+write adcirc fort.14
+OceanMesh2D
+clearvars; clc;
