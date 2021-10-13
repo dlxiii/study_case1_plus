@@ -6,3 +6,4 @@ fvcom_files/post/wa_mesh_final.mat
 fvcom_files/post/wa_mesh.mat
 gis_files/meiji/bathymetry/meiji_contour.shp
 gis_files/meiji/bathymetry/meiji_elevation.tif
+*.m~
