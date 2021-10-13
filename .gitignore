@@ -1,4 +1,3 @@
-
 .DS_Store
 fvcom_files/post/wa.mat
 fvcom_files/post/wa_dif.mat
@@ -7,3 +6,4 @@ fvcom_files/post/wa_mesh.mat
 gis_files/meiji/bathymetry/meiji_contour.shp
 gis_files/meiji/bathymetry/meiji_elevation.tif
 *.m~
+*.qgs~
