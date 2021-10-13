@@ -5,3 +5,4 @@
 sh ./meiji_cu_m00_va.sh
 sh ./meiji_cd_m00_va.sh
 sh ./meiji_cud_m00_va.sh
+sh ./meiji_cr_m00_va.sh
