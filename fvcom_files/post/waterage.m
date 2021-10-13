@@ -22,7 +22,7 @@ folderpath = {...
     };
 typepath = {...
     'u','d',...
-    };
+    'r'};
 month = {'age14_09','age14_10','age14_11','age14_12',...
     'age15_01','age15_02','age15_03','age15_04','age15_05','age15_06',...
     'age15_07','age15_08'};
@@ -61,7 +61,7 @@ layerlist = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
 month = {'m09','m10','m11','m12',...
     'm01','m02','m03','m04','m05','m06',...
     'm07','m08'};
-typelist = {'cu','cd'};
+typelist = {'cu','cd','cr'};
 for f = 1:length(folderpath)
     for c = 1:length(typelist)
         for l = 1:length(layerlist)
@@ -92,6 +92,37 @@ for f = 1:length(folderpath)
         mwa.(folderpath{f}).cud.(month{m})=...
             mwa.(folderpath{f}).cu.(month{m})./...
             mwa.(folderpath{f}).cd.(month{m});
+    end
+end
+
+% calculate annual age
+typelist = {'cu','cd','cr','cud'};
+for f = 1:length(folderpath)
+    for c = 1:length(typelist)
+        for l = 1:length(layerlist)
+            layer = layerlist(l);
+            mwa.(folderpath{f}).(typelist{c}).m00 = 0;
+            for m = 1:length(month)
+                % data = mwa.(folderpath{f}).(typelist{c}).(month{m});(:,:,layer);
+                mwa.(folderpath{f}).(typelist{c}).m00 = ...
+                    mwa.(folderpath{f}).(typelist{c}).m00 + ...
+                    mwa.(folderpath{f}).(typelist{c}).(month{m});
+            end
+            mwa.(folderpath{f}).(typelist{c}).m00 = ...
+                mwa.(folderpath{f}).(typelist{c}).m00 / 12;
+        end
+    end
+end
+% calculate annual vertical mean age
+typelist = {'cu','cd','cr','cud'};
+for f = 1:length(folderpath)
+    for c = 1:length(typelist)
+        mwa.(folderpath{f}).(typelist{c}).m00_va = 0;
+        for m = 1:length(month)
+            % data = mwa.(folderpath{f}).(typelist{c}).(month{m});(:,:,layer);
+            mwa.(folderpath{f}).(typelist{c}).m00_va = ...
+                mean(mwa.(folderpath{f}).(typelist{c}).m00,3);
+        end
     end
 end
 save('wa_mesh.mat','mwa','-v7.3','-nocompression');
