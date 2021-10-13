@@ -440,5 +440,3 @@ for f = 1:length(folderpath)
 end
 fclose(fileID0);
 fclose(fileID1);
-
-% save('wa_mesh_final.mat','mwa','-v7.3','-nocompression');
