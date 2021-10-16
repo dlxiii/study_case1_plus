@@ -7,3 +7,4 @@ gis_files/meiji/bathymetry/meiji_contour.shp
 gis_files/meiji/bathymetry/meiji_elevation.tif
 *.m~
 *.qgs~
+gis_files/meiji/bathymetry/meiji_elevation.nc
