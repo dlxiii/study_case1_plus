@@ -94,6 +94,8 @@ for f = 1:length(folderpath)
             mwa.(folderpath{f}).cd.(month{m});
     end
 end
+
+
 % calculate seasonal age
 typelist = {'cu','cd','cr','cud'};
 for f = 1:length(folderpath)
@@ -215,4 +217,10 @@ for c = 1:length(typelist)
             mean(wa_dif.(typelist{c}).m00,3);
     end
 end
+
+% additional calculate
+wa_dif.rud.m00 = wa_dif.cu.m00 ./ wa_dif.cd.m00;  % not good to visualize
+wa_dif.u_pct.m00 = wa_dif.cu.m00 ./ mwa.meiji.cu.m00;
+wa_dif.d_pct.m00 = wa_dif.cd.m00 ./ mwa.meiji.cd.m00;
+
 save('wa_dif.mat','wa_dif','-v7.3','-nocompression');                
