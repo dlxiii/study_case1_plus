@@ -344,8 +344,8 @@ for i = 1:length(name)
         DOvint',...
         [0,1,2,3,4,5,6,7,8,9,10,11,12]);
     h.LineWidth = 0.1;
-    v = [0,1,2,3,4,5,6,7,8,9,10,11,12];
-    clabel(C,h,v,'FontSize',12,'FontName','Arial','Color','black');
+    %v = [0,1,2,3,4,5,6,7,8,9,10,11,12];
+    %clabel(C,h,v,'FontSize',12,'FontName','Arial','Color','black');
     hold on;
     %file = "/Users/yulong/GitHub/OceanMesh2D/datasets/C23-06_TOKYOBAY.shp";
     %s = shaperead(file);
@@ -362,9 +362,9 @@ for i = 1:length(name)
     % title([DateString, ': ', 'water ',NAME_ITEM, ' of ', NAME_LOCATION, ' ', item]);
     box(axes1,'on');
 
-    print(gcf,['./Results/present/Age_DO/',...
+    print(gcf,['./small_fonts/',...
         'DO_',name{i},'.png'],'-dpng','-r600');
-    savefig(['./Results/present/Age_DO/',...
+    savefig(['./small_fonts/',...
         'DO_',name{i},'.fig']);
 
     data = scatteredInterpolant(...
