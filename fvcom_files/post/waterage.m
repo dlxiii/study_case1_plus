@@ -42,7 +42,7 @@ for f = 1:length(folderpath)
             wa.(folderpath{f}).nv = TD.nv;
             wa.(folderpath{f}).siglay = TD.siglay;
             for m = 1:length(mcode)
-                wa.(folderpath{f}).cu.(mcode{m}) = TD.(month{m});
+                wa.(folderpath{f}).(['c',typepath{t}]).(mcode{m}) = TD.(month{m});
             end
         else
             for m = 1:length(mcode)

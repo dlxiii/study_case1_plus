@@ -1,0 +1,9 @@
+<OGRVRTDataSource>
+    <OGRVRTLayer name="present_cd_age14_07_02_11">
+        <SrcLayer>present_cd_age14_07_02_11</SrcLayer>
+        <LayerSRS>EPSG:4326</LayerSRS>
+        <SrcDataSource>CSV:present_cd_age14_07_02_11.csv</SrcDataSource>
+        <GeometryType>wkbPoint</GeometryType>
+        <GeometryField encoding="PointFromColumns" x="field_1" y="field_2" z="field_3"/>
+    </OGRVRTLayer>
+</OGRVRTDataSource>

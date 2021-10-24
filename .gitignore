@@ -8,3 +8,5 @@ gis_files/meiji/bathymetry/meiji_elevation.tif
 *.m~
 *.qgs~
 gis_files/meiji/bathymetry/meiji_elevation.nc
+fvcom_files/post/wadi.mat
+gis_files/公共用水域水質測定データ/before 2009/data_before_2009.dbf

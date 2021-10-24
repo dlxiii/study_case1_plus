@@ -1,0 +1,319 @@
+% Which system am I using?
+if ismac        % On Mac
+    basedir = '/Users/yulong/GitHub/';
+    addpath([basedir,'fvcomtoolbox/custom/']);
+    addpath([basedir,'fvcomtoolbox/utilities/']);
+elseif isunix	% Unix?
+    basedir = '/home/usr0/n70110d/';
+    addpath([basedir,'github/fvcomtoolbox/custom/']);
+    addpath([basedir,'github/fvcomtoolbox/utilities/']);
+elseif ispc     % Or Windows?
+    basedir = 'C:/Users/Yulong WANG/Documents/GitHub/';      
+    addpath([basedir,'fvcom-toolbox/custom/']);
+    addpath([basedir,'fvcom-toolbox/utilities/']);
+end
+load('d_ncfile_dates.mat')
+list_jj = [...
+    (31+28+31+30+31+30)*24+1,...
+    (31+28+31+30+31+30+1)*24+1,...
+    (31+28+31+30+31+30+31+31+30)*24+1,...
+    (31+28+31+30+31+30+31+31+30+31+30+31+31+28+31+30+31)*24+1];
+yidx = {'14','14','14','15'};
+midx = {'07','07','10','06'};
+didx = {'01','02','01','01'};
+id = 1
+
+id =
+
+     1
+
+timetoplot = {['age',yidx{id},'_',midx{id},'_',didx{id}]};
+    TD.Times = ['20',yidx{id},'_',midx{id},'_',didx{id}];
+k1 = find(ncfile.time == greg2mjulian(str2num(['20',yidx{id}]),str2num(midx{id}),str2num(didx{id}),0,0,0));
+k2 = find(ncfile.time == juliandate(str2num(['20',yidx{id+1}]),str2num(midx{id+1}),str2num(didx{id}),0,0,0))-1;
+str2num(['20',yidx{id+1}]),str2num(midx{id+1}),str2num(didx{id})
+
+ans =
+
+        2014
+
+
+ans =
+
+     7
+
+
+ans =
+
+     1
+
+greg2mjulian(str2num(['20',yidx{id}]),str2num(midx{id}),str2num(didx{id}),0,0,0))
+ greg2mjulian(str2num(['20',yidx{id}]),str2num(midx{id}),str2num(didx{id}),0,0,0))
+                                                                                 ↑
+{Error: Invalid expression. When calling a function or indexing a variable, use parentheses.
+Otherwise, check for mismatched delimiters.
+} 
+greg2mjulian(str2num(['20',yidx{id}]),str2num(midx{id}),str2num(didx{id}),0,0,0)
+
+ans =
+
+       56839
+
+(str2num(['20',yidx{id}]),str2num(midx{id}),str2num(didx{id}),0,0,0)
+ (str2num(['20',yidx{id}]),str2num(midx{id}),str2num(didx{id}),0,0,0)
+                          ↑
+{Error: Invalid expression. When calling a function or indexing a variable, use parentheses. Otherwise, check for
+mismatched delimiters.
+} 
+str2num(['20',yidx{id}]),str2num(midx{id}),str2num(didx{id})
+
+ans =
+
+        2014
+
+
+ans =
+
+     7
+
+
+ans =
+
+     1
+
+str2num(['20',yidx{id}]),str2num(midx{id}),str2num(didx{id})+1
+
+ans =
+
+        2014
+
+
+ans =
+
+     7
+
+
+ans =
+
+     2
+
+k1 = find(ncfile.time == greg2mjulian(str2num(['20',yidx{id}]),str2num(midx{id}),str2num(didx{id}),0,0,0));
+    try
+        % k2 = find(ncfile.time == mjuliandate(str2num(['20',yidx{id+1}]),str2num(midx{id+1}),01))-1;
+        k2 = find(ncfile.time == juliandate(str2num(['20',yidx{id}]),str2num(midx{id}),str2num(didx{id})+1,0,0,0))-1;
+    catch
+        k2 = length(ncfile.time)-1;
+    end
+k1 = find(ncfile.time == greg2mjulian(str2num(['20',yidx{id}]),str2num(midx{id}),str2num(didx{id}),0,0,0));
+    k2 = k1 + 23;
+yidx = {'14','14','14','15'};
+midx = {'07','07','10','06'};
+didx = {'01','02','01','01'};
+
+for id = 1:length(yidx)
+    timetoplot = {['age',yidx{id},'_',midx{id},'_',didx{id}]};
+    TD.Times = ['20',yidx{id},'_',midx{id},'_',didx{id}];
+    % k1 = find(ncfile.time == mjuliandate(str2num(['20',yidx{id}]),str2num(midx{id}),01));
+    k1 = find(ncfile.time == greg2mjulian(str2num(['20',yidx{id}]),str2num(midx{id}),str2num(didx{id}),0,0,0));
+    k2 = k1 + 23;
+    TD.(['age',yidx{id},'_',midx{id},'_',didx{id}]) = mean(ncfile.age(:,:,k1:k2),3,'omitnan');
+end
+contourf(TD.age14_07_01)
+f = 1
+
+f =
+
+     1
+
+t = 1
+
+t =
+
+     1
+
+load(fullfile(['/Users/yulong/GitHub/study_case1_plus/fvcom_files/',...
+            folderpath{f},'/pst/',typepath{t},'_ncfile_date_TD.mat']));
+wad = [];
+wad.(folderpath{f}).lon = TD.lon;
+            wad.(folderpath{f}).lat = TD.lat;
+            wad.(folderpath{f}).nv = TD.nv;
+            wad.(folderpath{f}).siglay = TD.siglay;
+date = {...
+    'age14_07_01',...
+    'age14_07_02',...
+    'age14_10_01',...
+    'age14_06_01',...
+    };
+dcode = {...
+    'age14_07_01',...
+    'age14_07_02',...
+    'age14_10_01',...
+    'age14_06_01',...
+    };
+wadate
+{Undefined function or variable 'd'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('wadate', '/Users/yulong/GitHub/study_case1_plus/fvcom_files/post/wadate.m', 44)" style="font-weight:bold">wadate</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/study_case1_plus/fvcom_files/post/wadate.m',44,0)">line 44</a>)
+                wad.(folderpath{f}).(['c',typepath{t}]).(dcode{d}) = ncfile.(dcode{d});
+} 
+wadate
+{Undefined variable "ncfile" or class "ncfile.age14_07_01".
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('wadate', '/Users/yulong/GitHub/study_case1_plus/fvcom_files/post/wadate.m', 44)" style="font-weight:bold">wadate</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/study_case1_plus/fvcom_files/post/wadate.m',44,0)">line 44</a>)
+                wad.(folderpath{f}).(['c',typepath{t}]).(dcode{d}) = ncfile.(dcode{d});
+} 
+wadate
+{Reference to non-existent field 'age14_06_01'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('wadate', '/Users/yulong/GitHub/study_case1_plus/fvcom_files/post/wadate.m', 44)" style="font-weight:bold">wadate</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/study_case1_plus/fvcom_files/post/wadate.m',44,0)">line 44</a>)
+                wad.(folderpath{f}).(['c',typepath{t}]).(dcode{d}) = TD.(dcode{d});
+} 
+wadate
+{Undefined function or variable 'mcode'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('wadate', '/Users/yulong/GitHub/study_case1_plus/fvcom_files/post/wadate.m', 47)" style="font-weight:bold">wadate</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/study_case1_plus/fvcom_files/post/wadate.m',47,0)">line 47</a>)
+            for d = 1:length(mcode)
+} 
+wadate
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('save')" style="font-weight:bold">save</a>
+Variable 'wa' not found.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('wadate', '/Users/yulong/GitHub/study_case1_plus/fvcom_files/post/wadate.m', 54)" style="font-weight:bold">wadate</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/study_case1_plus/fvcom_files/post/wadate.m',54,0)">line 54</a>)
+save('wad.mat','wa','-v7.3','-nocompression');
+} 
+wadate
+clear all;
+clearvars; 
+clc;
+
+delete('diary')
+diary on;
+% Which system am I using?
+if ismac        % On Mac
+    basedir = '/Users/yulong/GitHub/';
+    addpath([basedir,'fvcomtoolbox/custom/']);
+    addpath([basedir,'fvcomtoolbox/utilities/']);
+elseif isunix	% Unix?
+    basedir = '/home/usr0/n70110d/';
+    addpath([basedir,'github/fvcomtoolbox/custom/']);
+    addpath([basedir,'github/fvcomtoolbox/utilities/']);
+elseif ispc     % Or Windows?
+    basedir = 'C:/Users/Yulong WANG/Documents/GitHub/';      
+    addpath([basedir,'fvcom-toolbox/custom/']);
+    addpath([basedir,'fvcom-toolbox/utilities/']);
+end
+
+%%%------------------------------------------------------------------------
+%%%                          INPUT CONFIGURATION
+%%%------------------------------------------------------------------------
+formatSpec = '%02i';
+td = load("./wad.mat");
+wad = td.wad;
+clear td;
+if exist('../../wad_files', 'dir')~=7
+    mkdir('../../wad_files')
+end
+folderpath = {'meiji','present'};
+typelist = {'cu','cd'};
+layerlist = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+dcode = {...
+    'age14_07_01',...
+    'age14_07_02',...
+    'age14_10_01',...
+    'age15_06_01',...
+    };
+csv_resol = 500;
+f = 1
+
+f =
+
+     1
+
+c = 1
+
+c =
+
+     1
+
+l = 1
+
+l =
+
+     1
+
+layer = layerlist(l);
+m = 1
+
+m =
+
+     1
+
+folderpath{f}
+
+ans =
+
+    'meiji'
+
+typelist{c}
+
+ans =
+
+    'cu'
+
+dcode{m}
+
+ans =
+
+    'age14_07_01'
+
+data = wad.(folderpath{f}).(typelist{c}).(dcode{m})(:,:,layer);
+wad2csv
+[Warning: File 'diary' not found.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('wad2csv', '/Users/yulong/GitHub/study_case1_plus/fvcom_files/post/wad2csv.m', 5)" style="font-weight:bold">wad2csv</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/study_case1_plus/fvcom_files/post/wad2csv.m',5,0)">line 5</a>)] 
+{Undefined variable "mwa" or class "mwa.lat".
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('wad2csv', '/Users/yulong/GitHub/study_case1_plus/fvcom_files/post/wad2csv.m', 64)" style="font-weight:bold">wad2csv</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/study_case1_plus/fvcom_files/post/wad2csv.m',64,0)">line 64</a>)
+                data_temp.latint = mwa.lat;
+} 
+wad2csv
+[Warning: File 'diary' not found.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('wad2csv', '/Users/yulong/GitHub/study_case1_plus/fvcom_files/post/wad2csv.m', 5)" style="font-weight:bold">wad2csv</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/study_case1_plus/fvcom_files/post/wad2csv.m',5,0)">line 5</a>)] 
+{Reference to non-existent field 'lat'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('wad2csv', '/Users/yulong/GitHub/study_case1_plus/fvcom_files/post/wad2csv.m', 64)" style="font-weight:bold">wad2csv</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/study_case1_plus/fvcom_files/post/wad2csv.m',64,0)">line 64</a>)
+                data_temp.latint = wad.lat;
+} 
+[Warning: File 'diary' not found.] 
+wad2csv
+[Warning: File 'diary' not found.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('wad2csv', '/Users/yulong/GitHub/study_case1_plus/fvcom_files/post/wad2csv.m', 5)" style="font-weight:bold">wad2csv</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/study_case1_plus/fvcom_files/post/wad2csv.m',5,0)">line 5</a>)] 
+{Reference to non-existent field 'cu'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('wad2csv', '/Users/yulong/GitHub/study_case1_plus/fvcom_files/post/wad2csv.m', 64)" style="font-weight:bold">wad2csv</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/study_case1_plus/fvcom_files/post/wad2csv.m',64,0)">line 64</a>)
+                data_temp.latint = wad.(typelist{c}).lat;
+} 
+wad2csv
+[Warning: File 'diary' not found.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('wad2csv', '/Users/yulong/GitHub/study_case1_plus/fvcom_files/post/wad2csv.m', 5)" style="font-weight:bold">wad2csv</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/study_case1_plus/fvcom_files/post/wad2csv.m',5,0)">line 5</a>)] 
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('horzcat')" style="font-weight:bold">horzcat</a>
+Dimensions of arrays being concatenated are not consistent.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('wad2csv', '/Users/yulong/GitHub/study_case1_plus/fvcom_files/post/wad2csv.m', 67)" style="font-weight:bold">wad2csv</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/study_case1_plus/fvcom_files/post/wad2csv.m',67,0)">line 67</a>)
+                M = [reshape(X,[numel(X),1]),...
+} 
+wadate
+wadate
+{Undefined variable "wa" or class "wa.meiji.cu.age14_07_01".
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('wadate', '/Users/yulong/GitHub/study_case1_plus/fvcom_files/post/wadate.m', 72)" style="font-weight:bold">wadate</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/study_case1_plus/fvcom_files/post/wadate.m',72,0)">line 72</a>)
+                data1 = double(wa.(folderpath{f}).(typelist{c}).(dcode{m})(:,layer));
+} 
+Undefined variable "wa" or class "wa.meiji.lon".
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('wadate', '/Users/yulong/GitHub/study_case1_plus/fvcom_files/post/wadate.m', 75)" style="font-weight:bold">wadate</a> (<a href="matlab: opentoline('/Users/yulong/GitHub/study_case1_plus/fvcom_files/post/wadate.m',75,0)">line 75</a>)
+                    wa.(folderpath{f}).lon,...
+
+[Warning: File 'diary' not found.] 
+Reference to non-existent field 'wadi'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('wad2csv', '/Users/yulong/GitHub/study_case1_plus/fvcom_files/post/wad2csv.m', 27)" style="
