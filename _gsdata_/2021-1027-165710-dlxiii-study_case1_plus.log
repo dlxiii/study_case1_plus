@@ -1,0 +1,8 @@
+2021-10-27 16:57:10: Turning Off Copy/Compare Extended Attributes, as one of file systems does not support it
+2021-10-27 16:57:10: Turning Off Copy Original Filesystem Names option, as one of file systems does not support it
+2021-10-27 16:57:12: -- 分析开始 User Command
+2021-10-27 16:57:12: 左侧: State file does not exist: /Users/yulong/GitHub/study_case1_plus/_gsdata_/_file_state_v4._gs
+2021-10-27 16:57:13: 右侧: State file does not exist: /Volumes/Yulong/GitHub/study_case1_plus/_gsdata_/_file_state_v4._gs
+2021-10-27 16:57:13: 变更：13,741， 冲突：0， 复制时间：0， 复制状态：0， 错误： 0, All: 13760
+2021-10-27 16:57:13: Left to Right: Copy File: 13741 
+2021-10-27 16:57:13: -- 分析已结束。历时 00:00:03, 速度： 4,586 文件/秒
