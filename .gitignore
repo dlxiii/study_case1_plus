@@ -10,3 +10,6 @@ gis_files/meiji/bathymetry/meiji_elevation.tif
 gis_files/meiji/bathymetry/meiji_elevation.nc
 fvcom_files/post/wadi.mat
 gis_files/公共用水域水質測定データ/before 2009/data_before_2009.dbf
+fvcom_files/post/mstrhouv_dif.mat
+fvcom_files/post/mstrhouvf_pr.mat
+fvcom_files/post/strhouv_mesh.mat

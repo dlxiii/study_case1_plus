@@ -51,6 +51,7 @@ month = {'m09','m10','m11','m12',...
 mmean = {'m00'};
 csv_resol = 100;
 
+%%
 waf_pr = {}; 
 % interpolation of topo data
 % f=1;
@@ -121,6 +122,7 @@ save('waf_pr.mat','waf_pr','-v7.3','-nocompression');
 %                     r3
 
 %% plot_cs_ns_u.png
+%{
 % Create matrix
 YMatrix1u=[...
     waf_pr{1, 1}{1, 2}{1, 4}(1,:);...
@@ -839,6 +841,7 @@ set(subplot12,'FontSize',16,'XGrid','on','YGrid','on');
 linkaxes([subplot10, subplot11, subplot12], 'x');
 
 saveas(gcf,'plot_ns&we.png');
+%}
 
 %% bay mouths sections cud
 
@@ -1160,9 +1163,9 @@ l = 840;
 n = 4;
 f = scoordF(...
     waf_pr{1, 1}{1, 1}{1, n}(:,3)',...
-    waf_pr{1, 1}{1, 7}{1, n},...
+    100*waf_pr{1, 1}{1, 7}{1, n},...
     20,0.1,...
-    -0.3,1.0,0.1);
+    100*-0.3,100*1.0,100*0.2);
 f.Position(3:4) = 1.5*[l l/4];
 saveas(gcf,'plot_upct_pro_ns.png');
 
